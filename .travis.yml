@@ -5,5 +5,4 @@ script:
   - mvn clean verify
 
 after_success:
-  - mvn clean test -Dserver.port=8080 jacoco:report coveralls:report
-
+  - mvn clean -Dserver.port=8080 jacoco:prepare-agent install jacoco:report
