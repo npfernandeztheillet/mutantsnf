@@ -1,9 +1,12 @@
 language: java
 sudo: false
-script: mvn clean verify
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
-
+install:
+  - mvn test-compile -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+script:
+  - mvn test jacoco:report
 env:
   global:
     - CODECOV_TOKEN=:e53af82b-0a31-443f-b6af-3889705b6f3a
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
