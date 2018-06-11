@@ -5,6 +5,7 @@ services:
   - mysql
 
 before_install:
+  - which mysql && until mysql -u root -e "show status" &>/dev/null; do sleep 1; done
   - mysql -e 'CREATE DATABASE IF NOT EXISTS mutants;'
   - mysql -u root -e "CREATE USER 'mutants'@'localhost' IDENTIFIED BY 'mutants2018';"
   - mysql -u root -e "GRANT ALL ON mutants.* TO 'mutants'@'localhost';"
