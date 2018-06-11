@@ -8,5 +8,8 @@ before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS mutants;'
 
 script:
-  - - mvn clean -Dserver.port=8080 jacoco:prepare-agent install jacoco:report
+  - mvn clean verify
+
+after_success:
+  - mvn clean -Dserver.port=8080 jacoco:prepare-agent install jacoco:report
 
