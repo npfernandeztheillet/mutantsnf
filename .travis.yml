@@ -6,10 +6,12 @@ services:
 
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS mutants;'
+  - mysql -u root -e "CREATE USER 'mutants'@'localhost' IDENTIFIED BY 'mutants2018';"
+  - mysql -u root -e "GRANT ALL ON mutants.* TO 'mutants'@'localhost';"
 
 script:
   - mvn clean verify
 
 after_success:
-  - mvn clean -Dserver.port=8080 jacoco:prepare-agent install jacoco:report
+  - mvn -Dserver.port=8080 jacoco:prepare-agent install jacoco:report
 
