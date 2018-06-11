@@ -10,13 +10,14 @@ public class DNA {
     private static final String DELIMITER = "-";
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
 
     @Column(name = "dna")
     private String dna;
 
-    @Column
+    @Column(name = "ismutant")
     private boolean isMutant = false;
 
    @Transient
@@ -31,7 +32,7 @@ public class DNA {
         this.dna = CommonHelper.concatArrayByDelimiter(dna,DELIMITER);
     }
 
-    public String toString() {
+    public String getDNA() {
         return dna;
     }
 

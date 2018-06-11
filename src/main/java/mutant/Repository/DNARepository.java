@@ -6,4 +6,5 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 @Transactional
-public interface DNARepository extends CrudRepository<DNA,String> {}
+public interface DNARepository extends CrudRepository<DNA,Long>, DNACustomRepository {
+}
