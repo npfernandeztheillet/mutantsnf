@@ -8,6 +8,12 @@ before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS mutants;'
   - mysql -u root -e "CREATE USER 'mutants'@'localhost' IDENTIFIED BY 'mutants2018';"
   - mysql -u root -e "GRANT ALL ON mutants.* TO 'mutants'@'localhost';"
+  - mysql -u root -e "CREATE TABLE IF NOT EXISTS `dna` (
+                        `id` int(11) NOT NULL AUTO_INCREMENT,
+                        `dna` longtext NOT NULL,
+                        `isMutant` tinyint(4) NOT NULL,
+                        PRIMARY KEY (`id`)
+                      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;"
 
 script:
   - mvn clean verify
