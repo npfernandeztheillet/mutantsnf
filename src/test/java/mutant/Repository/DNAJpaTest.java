@@ -20,7 +20,7 @@ import static com.jayway.restassured.RestAssured.given;
 import static mutant.Utils.Helpers.CommonHelper.getRandomMatrix;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class DNAJpaTest {
 
     private static final String validChars="ATCG";
