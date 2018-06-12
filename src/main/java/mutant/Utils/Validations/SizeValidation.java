@@ -10,7 +10,7 @@ public class SizeValidation implements IValidation{
 
         for (String matrixEntry:sequence) {
             if(matrixEntry.length() != size){
-                throw new InvalidException(matrixEntry + " size does not match the array size");
+                throw new InvalidException(matrixEntry + " size does not match");
             }
         }
     }
