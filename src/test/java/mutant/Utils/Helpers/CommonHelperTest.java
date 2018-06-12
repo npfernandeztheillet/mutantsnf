@@ -1,18 +1,11 @@
-package mutant.Utils;
+package mutant.Utils.Helpers;
 
 
-import mutant.Model.DNA;
-import mutant.Repository.DNARepository;
-import mutant.Utils.Helpers.CommonHelper;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import static mutant.Utils.Helpers.CommonHelper.getRandomMatrix;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.DEFINED_PORT)
