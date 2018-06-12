@@ -3,11 +3,10 @@ package mutant.Model;
 import mutant.Utils.Helpers.CommonHelper;
 
 import javax.persistence.*;
+import mutant.Utils.Static.*;
 
 @Entity
 public class DNA {
-
-    private static final String DELIMITER = "-";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,14 +26,16 @@ public class DNA {
 
     public DNA(){}
 
-    public DNA(String[] dna){
-        sequence = dna;
-        this.dna = CommonHelper.concatArrayByDelimiter(dna,DELIMITER);
+    public DNA(String[] sequence){
+        this.sequence = sequence;
+        this.dna = CommonHelper.concatArrayByDelimiter(sequence,Constants.DELIMITER);
     }
 
     public String getDNA() {
         return dna;
     }
+
+    public String[] getSequence() { return this.sequence;}
 
     public boolean getIsMutant() {
         return isMutant;

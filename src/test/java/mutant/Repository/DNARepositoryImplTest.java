@@ -2,6 +2,7 @@ package mutant.Repository;
 
 
 import mutant.Model.DNA;
+import mutant.Utils.Static.Constants;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +16,6 @@ import static mutant.Utils.Helpers.CommonHelper.getRandomMatrix;
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class DNARepositoryImplTest {
 
-    private static final String VALIDCHARS ="ATCG";
     private static final int SIZE = 10;
 
     @Autowired
@@ -23,7 +23,7 @@ public class DNARepositoryImplTest {
 
     @Test
     public void saveTest() {
-        String[] array = getRandomMatrix(VALIDCHARS,SIZE);
+        String[] array = getRandomMatrix(Constants.VALIDCHARS,SIZE);
         DNA dnaToTests = new DNA(array);
         DNA entitySaved=null;
         try{
@@ -32,5 +32,17 @@ public class DNARepositoryImplTest {
             Assert.fail();
         }
         Assert.assertNotNull(dnaRepository.findByDNA(entitySaved.getDNA()));
+    }
+
+    @Test
+    public void saveDuplicateTest() {
+        String[] array = new String[]{"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};
+        DNA dnaToTests = new DNA(array);
+        try{
+            dnaRepository.save(dnaToTests);
+            dnaRepository.save(dnaToTests);
+        }catch (Exception e){
+            Assert.assertNotNull(e);
+        }
     }
 }

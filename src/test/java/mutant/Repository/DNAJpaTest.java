@@ -1,7 +1,9 @@
 package mutant.Repository;
 
 
+import mutant.DTOs.DNADTO;
 import mutant.Model.DNA;
+import mutant.Utils.Static.Constants;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,8 +19,7 @@ import static mutant.Utils.Helpers.CommonHelper.getRandomMatrix;
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class DNAJpaTest {
 
-    private static final String VALID_CHARS ="ATCG";
-    private static final int SIZE = 3;
+    private static final int SIZE = 10;
 
     @Autowired
     private DNARepository dnaRepository;
@@ -26,6 +27,15 @@ public class DNAJpaTest {
     @Before
     public void setup() {
         dnaRepository.deleteAll();
+    }
+
+    @Test
+    public void getByDNATest() {
+        String[] array = getRandomMatrix(Constants.VALIDCHARS,SIZE);
+        DNA dnaToTests = new DNA(array);
+        dnaRepository.save(dnaToTests);
+        DNADTO dnaDTO = dnaRepository.getByDNA(dnaToTests.getDNA());
+        Assert.assertEquals(dnaToTests.getDNA(),dnaDTO.getDNA());
     }
 
     @Test
@@ -39,7 +49,7 @@ public class DNAJpaTest {
 
     @Test
     public void saveTest() {
-        String[] array = getRandomMatrix(VALID_CHARS,SIZE);
+        String[] array = getRandomMatrix(Constants.VALIDCHARS,SIZE);
         DNA dnaToTests = new DNA(array);
         DNA entitySaved=null;
         long idToFind=dnaRepository.findByDNA(dnaToTests.getDNA());
