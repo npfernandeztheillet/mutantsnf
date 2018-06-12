@@ -12,29 +12,29 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 public class CommonHelperTest {
 
-    private static final String validChars ="ATCG";
-    private static final String delimiter ="-";
-    private static final int size = 5;
+    private static final String VALIDCHARS ="ATCG";
+    private static final String DELIMITER ="-";
+    private static final int SIZE = 5;
 
     @Test
     public void concatArrayByDelimiterTest() {
         String[] array = new String[]{"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};
-        String concat= CommonHelper.concatArrayByDelimiter(array,delimiter);
+        String concat= CommonHelper.concatArrayByDelimiter(array,DELIMITER);
         String expected="ATGCGA-CAGTGC-TTATGT-AGAAGG-CCCCTA-TCACTG";
         Assert.assertEquals(expected,concat);
     }
 
     @Test
     public void getRandomStringTest() {
-        String firstString = CommonHelper.getRandomString(validChars,size);
-        String secondString = CommonHelper.getRandomString(validChars,size);
+        String firstString = CommonHelper.getRandomString(VALIDCHARS,SIZE);
+        String secondString = CommonHelper.getRandomString(VALIDCHARS,SIZE);
         Assert.assertNotNull(firstString,secondString);
     }
 
     @Test
     public void getRandomMatrixTest() {
-        String firstMatrix[] = CommonHelper.getRandomMatrix(validChars,size);
-        String secondMatrix[] = CommonHelper.getRandomMatrix(validChars,size);
+        String firstMatrix[] = CommonHelper.getRandomMatrix(VALIDCHARS,SIZE);
+        String secondMatrix[] = CommonHelper.getRandomMatrix(VALIDCHARS,SIZE);
 
         Assert.assertNotNull(firstMatrix.toString(),secondMatrix.toString());
     }

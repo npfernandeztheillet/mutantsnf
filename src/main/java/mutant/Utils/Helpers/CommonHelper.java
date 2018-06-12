@@ -39,4 +39,15 @@ public class CommonHelper {
         }
         return array;
     }
+
+    /**
+     * @param stringToValidate
+     * @param validChars
+     * @return
+     */
+    public static boolean containValidChars(String stringToValidate,String validChars){
+        String regExpValidation= "^["+ new String(validChars) +"]+$";
+        return stringToValidate.matches(regExpValidation);
+    }
+
 }
