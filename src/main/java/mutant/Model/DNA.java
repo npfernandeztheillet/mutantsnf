@@ -21,14 +21,14 @@ public class DNA {
     private boolean isMutant = false;
 
    @Transient
-    private String[] secuence;
+    private String[] sequence;
 
 
 
     public DNA(){}
 
     public DNA(String[] dna){
-        secuence = dna;
+        sequence = dna;
         this.dna = CommonHelper.concatArrayByDelimiter(dna,DELIMITER);
     }
 
