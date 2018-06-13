@@ -1,5 +1,6 @@
 package mutant.Services;
 
+import mutant.Business.MutantBusiness;
 import mutant.DTOs.DNADTO;
 import mutant.Exceptions.InvalidException;
 import mutant.Repository.DNARepository;
@@ -21,9 +22,9 @@ public class MutantService {
         String dnaString = CommonHelper.concatArrayByDelimiter(dna, Constants.DELIMITER);
         DNADTO dnaDTO = dnaRepository.getByDNA(dnaString);
         if (dnaDTO == null){
-            //TODO Analize matrix
-            boolean isMutant = true;
-            dnaRepository.save(new DNADTO(dna,dnaString,isMutant));
+            MutantBusiness business = new MutantBusiness(Constants.CONSECUTIVECHARS,Constants.MINSEQUENCE);
+            dnaDTO= business.analyseDna(new DNADTO(dna,dnaString));
+            dnaRepository.save(dnaDTO);
         }
         return dnaDTO.getIsMutant();
     }

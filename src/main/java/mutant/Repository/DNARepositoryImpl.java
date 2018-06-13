@@ -21,7 +21,8 @@ public class DNARepositoryImpl implements DNACustomRepository {
     public DNADTO getByDNA(String dna) {
         javax.persistence.Query query = this.entityManager.createNativeQuery("select * from dna d where d.dna=?1",DNA.class);
         query.setParameter(1, dna);
-        Object result= query.getSingleResult();
+        Object result= query.getResultList()
+                .stream().findFirst().orElse(null);
         if (result!=null){
             DNA entityDNA = (DNA) result;
             return new DNADTO(entityDNA.getId(),entityDNA.getSequence(),
@@ -55,7 +56,6 @@ public class DNARepositoryImpl implements DNACustomRepository {
 
     public void save(DNADTO dto)throws Exception{
         this.save(new DNA(dto.getSequence()));
-        throw new Exception("The entity does exists.");
     }
 
 }

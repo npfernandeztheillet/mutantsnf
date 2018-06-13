@@ -1,7 +1,11 @@
 package mutant.Utils.Helpers;
 
 
+import mutant.Utils.Static.Constants;
+
 import java.security.SecureRandom;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CommonHelper {
 
@@ -50,4 +54,17 @@ public class CommonHelper {
         return stringToValidate.matches(regExpValidation);
     }
 
+    public static int countMatchesString(String origin,int found,int minSequences){
+        if (origin.isEmpty())
+            return 0;
+        String rexExp = "([" + Constants.VALIDCHARS + "])\\1{3}";
+        Pattern p = Pattern.compile(rexExp);
+        Matcher m = p.matcher(origin);
+        int count = 0,start = 0;
+        while(m.find(start) && (found + count <minSequences)) {
+            count++;
+            start = m.start() + 1;
+        }
+        return count;
+    }
 }

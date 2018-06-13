@@ -28,7 +28,6 @@ public class MutantController {
         //return new ResponseEntity(HttpStatus.OK);
         try {
             logger.debug("Analysing DNA: " + CommonHelper.concatArrayByDelimiter(secuence.dna,DELIMITER));
-            //return new ResponseEntity(HttpStatus.OK);
             if(mutantService.isMutant(secuence.dna)){
                 return new ResponseEntity(HttpStatus.OK);
             } else {

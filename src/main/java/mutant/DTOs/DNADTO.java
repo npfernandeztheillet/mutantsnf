@@ -13,6 +13,12 @@ public class DNADTO {
         this.dna = dna;
         this.isMutant=isMutant;
     }
+    public DNADTO(String[] sequence,String dna){
+        this.id=id;
+        this.sequence = sequence;
+        this.dna = dna;
+        this.isMutant=isMutant;
+    }
 
     public DNADTO(Integer id, String[] sequence,String dna, boolean isMutant){
         this.id=id;
