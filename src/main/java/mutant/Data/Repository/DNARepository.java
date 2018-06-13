@@ -1,6 +1,6 @@
-package mutant.Repository;
+package mutant.Data.Repository;
 
-import mutant.Model.DNA;
+import mutant.Data.Model.DNA;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
 

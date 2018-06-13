@@ -1,9 +1,7 @@
-package mutant.Repository;
+package mutant.Data.Repository;
 
-import mutant.DTOs.DNADTO;
-import mutant.Model.DNA;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
+import mutant.Business.DTOs.DNADTO;
+import mutant.Data.Model.DNA;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;

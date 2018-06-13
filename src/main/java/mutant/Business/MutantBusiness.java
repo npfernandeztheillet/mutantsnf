@@ -1,15 +1,11 @@
 package mutant.Business;
 
-import mutant.DTOs.DNADTO;
+import mutant.Business.DTOs.DNADTO;
 import mutant.Exceptions.InvalidException;
 import mutant.Utils.Helpers.CommonHelper;
 import mutant.Utils.Helpers.MatrixHelper;
-import mutant.Utils.Static.Constants;
-import mutant.Utils.Validations.CharMatchesValidation;
-import mutant.Utils.Validations.SizeValidation;
-
-import java.util.ArrayList;
-import java.util.List;
+import mutant.Business.Validations.CharMatchesValidation;
+import mutant.Business.Validations.SizeValidation;
 
 public class MutantBusiness {
 
@@ -42,22 +38,21 @@ public class MutantBusiness {
         if (size > 0 && size <4) //All Matrix with size lower than 4 are no mutant.
             return false;
 
-        //Check horizontal and vertical (using transpose) rules.
-        for (int i = 0; i <size && found<minSequences ; i++) {
+        //Check horizontal rule.
+        for (int i = 0; i <size && found<minSequences ; i++)
             found+=CommonHelper.countMatchesString(matrix[i],found,minSequences);
+
+        //Check vertical (using transpose and check horizontal) rule.
+        for (int i = 0; i <size && found<minSequences ; i++) {
             found+=CommonHelper.countMatchesString(MatrixHelper.transposeMatrizColumn(matrix,i),found,minSequences);
         }
 
         //Check diagonals
         for (int i = 0; i <= size-4 && found<minSequences; i++) {
-            found+=CommonHelper.countMatchesString(MatrixHelper.getDownDiagonal(matrix, i, true)
-                                    ,found,minSequences);
-            found+=CommonHelper.countMatchesString(MatrixHelper.getDownDiagonal(matrix, i, false)
-                    ,found,minSequences);
-            found+=CommonHelper.countMatchesString(MatrixHelper.getUpperDiagonal(matrix, i, true)
-                    ,found,minSequences);
-            found+=CommonHelper.countMatchesString(MatrixHelper.getUpperDiagonal(matrix, i, false)
-                    ,found,minSequences);
+            found+=CommonHelper.countMatchesString(MatrixHelper.getDownDiagonal(matrix, i, true),found,minSequences);
+            found+=CommonHelper.countMatchesString(MatrixHelper.getDownDiagonal(matrix, i, false),found,minSequences);
+            found+=CommonHelper.countMatchesString(MatrixHelper.getUpperDiagonal(matrix, i, true),found,minSequences);
+            found+=CommonHelper.countMatchesString(MatrixHelper.getUpperDiagonal(matrix, i, false),found,minSequences);
         }
 
         if (found < minSequences)

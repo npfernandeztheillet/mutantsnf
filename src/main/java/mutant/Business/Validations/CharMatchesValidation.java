@@ -1,4 +1,4 @@
-package mutant.Utils.Validations;
+package mutant.Business.Validations;
 
 import mutant.Exceptions.InvalidException;
 import mutant.Utils.Helpers.CommonHelper;

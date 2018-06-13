@@ -1,4 +1,4 @@
-package mutant.Model;
+package mutant.Data.Model;
 
 import mutant.Utils.Helpers.CommonHelper;
 

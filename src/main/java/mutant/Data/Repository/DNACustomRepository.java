@@ -1,6 +1,6 @@
-package mutant.Repository;
+package mutant.Data.Repository;
 
-import mutant.DTOs.DNADTO;
+import mutant.Business.DTOs.DNADTO;
 import org.springframework.transaction.annotation.Transactional;
 
 

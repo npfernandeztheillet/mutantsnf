@@ -1,8 +1,7 @@
-package mutant.API;
+package mutant.Presentation;
 
 
-import mutant.Repository.DNARepository;
-import org.junit.Before;
+import mutant.Data.Repository.DNARepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

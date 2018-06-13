@@ -1,11 +1,7 @@
-package mutant.API;
+package mutant.Presentation;
 
 import com.jayway.restassured.RestAssured;
-import mutant.Repository.DNARepository;
 import org.junit.BeforeClass;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.web.ServerProperties;
-import org.springframework.core.env.Environment;
 
 public class FunctionalTest {
 

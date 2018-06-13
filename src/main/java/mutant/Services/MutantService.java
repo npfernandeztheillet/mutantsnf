@@ -1,9 +1,8 @@
 package mutant.Services;
 
 import mutant.Business.MutantBusiness;
-import mutant.DTOs.DNADTO;
-import mutant.Exceptions.InvalidException;
-import mutant.Repository.DNARepository;
+import mutant.Business.DTOs.DNADTO;
+import mutant.Data.Repository.DNARepository;
 import mutant.Utils.Helpers.CommonHelper;
 import mutant.Utils.Static.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
