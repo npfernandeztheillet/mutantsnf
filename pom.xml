@@ -101,7 +101,8 @@
                 <version>0.8.1</version>
                 <configuration>
                     <excludes>
-                        <exclude>**/*/main/java/mutant/Utils/Static/Constants.java</exclude>
+                        <exclude>**/*src/main/java/mutant/Utils/Static/Constants.java</exclude>
+                        <exclude>**/*src/main/java/mutant/MutantApplication.java</exclude>
                     </excludes>
                 </configuration>
                 <executions>
