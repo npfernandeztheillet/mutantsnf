@@ -7,21 +7,21 @@
 ## API Documentation
 
 `URL:`
-
-`Headers`:
+ + https://mutantsnf.herokuapp.com/mutant
+ 
+`Headers:`
   + For POST requests (with a body): `Content-Type: application/json`
 
 
 `POST /mutants`
-  - No Mutant -> Body: `{ "dna":["ATGCGA","CAGTGC","TTATTT","AGACGG","GCGTCA","TCACTG"] }`
-  - Mutant -> Body: `{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}`
+  + No Mutant -> Body: `{ "dna":["ATGCGA","CAGTGC","TTATTT","AGACGG","GCGTCA","TCACTG"] }`
+  + Mutant -> Body: `{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}`
 
 
 Travis:
 https://travis-ci.org/npfernandeztheillet/mutantsnf
 
 Heroku:
-
 https://dashboard.heroku.com/apps/mutantsnf
 
 CodeCov:
