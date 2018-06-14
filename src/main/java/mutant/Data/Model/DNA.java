@@ -21,13 +21,16 @@ public class DNA {
 
    @Transient
     private String[] sequence;
-
-
-
     public DNA(){}
 
     public DNA(String[] sequence){
         this.sequence = sequence;
+        this.dna = CommonHelper.concatArrayByDelimiter(sequence,Constants.DELIMITER);
+    }
+
+    public DNA(String[] sequence,boolean isMutant){
+        this.sequence = sequence;
+        this.isMutant=isMutant;
         this.dna = CommonHelper.concatArrayByDelimiter(sequence,Constants.DELIMITER);
     }
 

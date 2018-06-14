@@ -53,7 +53,7 @@ public class DNARepositoryImpl implements DNACustomRepository {
     }
 
     public void save(DNADTO dto)throws Exception{
-        this.save(new DNA(dto.getSequence()));
+        this.save(new DNA(dto.getSequence(),dto.getIsMutant()));
     }
 
 }
