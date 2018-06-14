@@ -41,7 +41,7 @@ public class MutantController {
                     .body(e.getMessage());
         } catch (Exception e){
             logger.error(e.getMessage(),e);
-            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
 
