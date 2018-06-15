@@ -1,0 +1,13 @@
+mutant
+mutant.Business
+mutant.Business.DTOs
+mutant.Business.Validations
+mutant.Data
+mutant.Data.Model
+mutant.Data.Repository
+mutant.Exceptions
+mutant.Presentation
+mutant.Presentation.API
+mutant.Services
+mutant.Utils.Helpers
+mutant.Utils.Static

@@ -59,6 +59,7 @@ public class DNAJpaTest {
         if(idToFind>0)
             dnaRepository.deleteById(idToFind);
         try{
+            dnaToTests.setIsMutant(true);
             entitySaved= dnaRepository.save(dnaToTests);
         }catch (Exception e){
             Assert.fail();

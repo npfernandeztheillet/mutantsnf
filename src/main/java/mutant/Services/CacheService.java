@@ -25,10 +25,6 @@ public class CacheService {
         this.cacheName = DEFAULTNAME;
     }
 
-    public CacheService(String cacheName){
-        this.cacheName = cacheName;
-    }
-
     public int getSize(){
         Cache cache =cacheManager.getCache(cacheName);
         return cache.getSize();
