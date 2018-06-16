@@ -1,7 +1,8 @@
 # Mutants by NF
 
+## CI status
 [![Build Status](https://travis-ci.org/npfernandeztheillet/mutantsnf.svg?branch=master)](https://travis-ci.org/npfernandeztheillet/mutantsnf)
-
+## Coverage status
 [![Coverage Status](https://coveralls.io/repos/github/npfernandeztheillet/mutantsnf/badge.svg?branch=master)](https://coveralls.io/github/npfernandeztheillet/mutantsnf?branch=master)
 
 ## API Usage
@@ -33,17 +34,18 @@
 * [ECache](https://rometools.github.io/rome/) -  LRU cache
 * [Heroku](https://www.heroku.com/) - Cloud application Platform
 * [Jacoco](https://www.eclemma.org/jacoco/) - Code coverage library
-* [Tracis-CI](https://www.eclemma.org/jacoco/) - Continuos Integration
+* [Travis-CI](https://www.eclemma.org/jacoco/) - Continuos Integration
 * [REST Assured](http://rest-assured.io/) - Test Rest API
 
+## Tools Links 
 
-Travis:
++ Travis:
 https://travis-ci.org/npfernandeztheillet/mutantsnf
 
-Heroku:
++ Heroku:
 https://dashboard.heroku.com/apps/mutantsnf
 
-CodeCov:
++ CodeCov:
 https://codecov.io/gh/npfernandeztheillet/mutantsnf
 
 
