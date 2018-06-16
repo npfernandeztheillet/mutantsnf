@@ -36,6 +36,7 @@
 * [Jacoco](https://www.eclemma.org/jacoco/) - Code coverage library
 * [Travis-CI](https://www.eclemma.org/jacoco/) - Continuos Integration
 * [REST Assured](http://rest-assured.io/) - Test Rest API
+* [Coveralls](http://coveralls.io/) - Test Coverage History & Stadistics
 
 ## Tools Links 
 
@@ -45,8 +46,8 @@ https://travis-ci.org/npfernandeztheillet/mutantsnf
 + Heroku:
 https://dashboard.heroku.com/apps/mutantsnf
 
-+ CodeCov:
-https://codecov.io/gh/npfernandeztheillet/mutantsnf
++ Coveralls:
+https://coveralls.io/github/npfernandeztheillet/mutantsnf
 
 
 
