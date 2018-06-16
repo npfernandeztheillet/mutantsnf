@@ -25,7 +25,6 @@ public class MutantController {
 
     @RequestMapping(value="/mutant", method = RequestMethod.POST)
     public ResponseEntity isMutant(@RequestBody RequestModel secuence){
-        //return new ResponseEntity(HttpStatus.OK);
         try {
             logger.debug("Analysing DNA: " + CommonHelper.concatArrayByDelimiter(secuence.dna,DELIMITER));
             if(mutantService.isMutant(secuence.dna)){
@@ -33,7 +32,6 @@ public class MutantController {
             } else {
                 return new ResponseEntity(HttpStatus.FORBIDDEN);
             }
-
         } catch (InvalidException e) {
             logger.error(e.getMessage());
             return ResponseEntity

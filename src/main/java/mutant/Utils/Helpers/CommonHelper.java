@@ -19,6 +19,7 @@ public class CommonHelper {
     }
 
     /**
+     * Method responsible for generate a random string only with valid characters.
      * @param validChars sequence of valid characters to generate the string.
      * @param size size of the string to generate.
      * @return generated string.
@@ -32,6 +33,7 @@ public class CommonHelper {
     }
 
     /**
+     * Method responsible for generate a random matrix only with valid characters.
      * @param validChars sequence of valid characters to generate the matrix.
      * @param size dimensions to the matrix to generate. (size x size)
      * @return generated matrix with random valid chars.
@@ -45,15 +47,23 @@ public class CommonHelper {
     }
 
     /**
+     * Method responsible for validating that a sequence has only valid characters, specified in validChars.
      * @param stringToValidate
      * @param validChars
-     * @return
+     * @return true if stringToValidate has only valid chars defined in validChars
      */
     public static boolean containValidChars(String stringToValidate,String validChars){
         String regExpValidation= "^["+ new String(validChars) +"]+$";
         return stringToValidate.matches(regExpValidation);
     }
 
+    /**
+     * Method responsible for counting the number of equal character sequences in a string
+     * @param origin string to search mutant sequence.
+     * @param found number of current sequences encountered.
+     * @param minSequences
+     * @return count of sequences encountered.
+     */
     public static int countMatchesString(String origin,int found,int minSequences){
         if (origin.isEmpty())
             return 0;

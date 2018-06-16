@@ -4,18 +4,37 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/npfernandeztheillet/mutantsnf/badge.svg?branch=master)](https://coveralls.io/github/npfernandeztheillet/mutantsnf?branch=master)
 
-## API Documentation
+## API Usage
 
-`URL:`
+`App URL`
  + https://mutantsnf.herokuapp.com/mutant
- 
-`Headers:`
+
+`Usage` 
+  
   + For POST requests (with a body): `Content-Type: application/json`
 
 
 `POST /mutants`
-  + No Mutant -> Body: `{ "dna":["ATGCGA","CAGTGC","TTATTT","AGACGG","GCGTCA","TCACTG"] }`
+  + No Mutant -> Body: `{"dna":["ATGCGA","CAGTGC","TTATTT","AGACGG","GCGTCA","TCACTG"]}`
   + Mutant -> Body: `{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}`
+
+## Documentation
++ [JDoc](/doc/jdoc/index.html)
++ [Sequence diagram](/doc/pdf/sequence.pdf)
++ [Architecture diagram](/doc/pdf/architectecture.pdf)
+
+
+## Built With
+
+* [SpringBoot](https://spring.io/projects/spring-boot)
+* [Junit](https://junit.org/junit5/) Test Suite
+* [MySql](https://www.mysql.com/) DBMS 
+* [Maven](https://maven.apache.org/) - Dependency management
+* [ECache](https://rometools.github.io/rome/) -  LRU cache
+* [Heroku](https://www.heroku.com/) - Cloud application Platform
+* [Jacoco](https://www.eclemma.org/jacoco/) - Code coverage library
+* [Tracis-CI](https://www.eclemma.org/jacoco/) - Continuos Integration
+* [REST Assured](http://rest-assured.io/) - Test Rest API
 
 
 Travis:

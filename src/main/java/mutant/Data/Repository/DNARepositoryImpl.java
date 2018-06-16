@@ -15,6 +15,10 @@ public class DNARepositoryImpl implements DNACustomRepository {
     @PersistenceContext()
     private EntityManager entityManager;
 
+    /**
+     * @param dna
+     * @return DNADTO if exist in database or null if not, by DNA.
+     */
     @Override
     public DNADTO getByDNA(String dna) {
         javax.persistence.Query query = this.entityManager.createNativeQuery("select * from dna d where d.dna=?1",DNA.class);
@@ -29,6 +33,10 @@ public class DNARepositoryImpl implements DNACustomRepository {
         return null;
     }
 
+    /**
+     * @param dna
+     * @return Return id of the DNA in database.
+     */
     @Override
     public int findByDNA(String dna) {
         javax.persistence.Query query = this.entityManager.createNativeQuery("select max(d.id) from dna d where d.dna=?1");

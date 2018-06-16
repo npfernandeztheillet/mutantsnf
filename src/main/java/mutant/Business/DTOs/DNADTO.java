@@ -1,5 +1,8 @@
 package mutant.Business.DTOs;
 
+/**
+ * DNA data transfer object.
+ */
 public class DNADTO {
 
     private Integer id;

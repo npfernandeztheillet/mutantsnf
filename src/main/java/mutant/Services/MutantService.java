@@ -23,16 +23,27 @@ public class MutantService {
     public MutantService(){
     }
 
+    /**
+     *
+     *First, it is verified if the DNA sequence sent is valid.
+     *Then it looks if it is in the cache. In the case that is found, it is returned true.
+     *If not, it is searched in the database, if it is, it is added to the cache and returned true.
+     * If not, the sequence is analyzed, and if it is a mutant, it is added to the database and to the cache and true is returned
+     * @param dna sequence
+     * @return true, if more than MINSEQUENCE strings of CONSECUTIVECHARS valid consecutive characters are found, false in other case.
+     * @throws Exception
+     */
     public boolean isMutant(String[] dna) throws Exception {
         String dnaString = CommonHelper.concatArrayByDelimiter(dna, Constants.DELIMITER);
         DNADTO cacheElement=null;
-        DNADTO dnaDTO =null;
+        DNADTO dnaDTO = new DNADTO(dna,dnaString);
+        MutantBusiness business = new MutantBusiness(Constants.CONSECUTIVECHARS,Constants.MINSEQUENCE);
+        business.validateDNA(dnaDTO);
         cacheElement= (DNADTO)cache.get(dnaString);
         if (cacheElement == null){
             dnaDTO = dnaRepository.getByDNA(dnaString);
             if (dnaDTO == null){
-                MutantBusiness business = new MutantBusiness(Constants.CONSECUTIVECHARS,Constants.MINSEQUENCE);
-                dnaDTO= business.analyseDna(new DNADTO(dna,dnaString));
+                dnaDTO= business.analyseDna(dnaDTO);
                 if (dnaDTO.getIsMutant()){
                     dnaRepository.save(dnaDTO);
                     cache.put(dnaString,dnaDTO);

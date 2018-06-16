@@ -20,8 +20,8 @@ public class MatrixHelperTest {
         int size= matrix.length;
         arrayList = new ArrayList<>();
         for (int i = 0; i <= size-4; i++) {
-            arrayList.add(MatrixHelper.getDownDiagonal(matrix, i, true));
-            arrayList.add(MatrixHelper.getDownDiagonal(matrix, i, false));
+            arrayList.add(MatrixHelper.getBelowDiagonal(matrix, i, true));
+            arrayList.add(MatrixHelper.getBelowDiagonal(matrix, i, false));
             arrayList.add(MatrixHelper.getUpperDiagonal(matrix, i, true));
             arrayList.add(MatrixHelper.getUpperDiagonal(matrix, i, false));
         }
@@ -56,9 +56,9 @@ public class MatrixHelperTest {
     public void getDownDiagonalsTest() {
         String[] matrix = new String[]{"ABCDE","FGHIJ","KLMNO","PQRST","UVWXY"};
         String resultDiagonal = "AGMSY";
-        Assert.assertEquals(MatrixHelper.getDownDiagonal(matrix,0,false),resultDiagonal);
+        Assert.assertEquals(MatrixHelper.getBelowDiagonal(matrix,0,false),resultDiagonal);
         String resultInverseDiagonal = "VRNJ";
-        Assert.assertEquals(MatrixHelper.getDownDiagonal(matrix,1,true),resultInverseDiagonal);
+        Assert.assertEquals(MatrixHelper.getBelowDiagonal(matrix,1,true),resultInverseDiagonal);
     }
 
 
@@ -68,9 +68,9 @@ public class MatrixHelperTest {
         String firstMatch = "ADG";
         String secondMatch = "BEH";
         String thirdMatch = "CFI";
-        Assert.assertEquals(MatrixHelper.transposeMatrizColumn(matrix,0),firstMatch);
-        Assert.assertEquals(MatrixHelper.transposeMatrizColumn(matrix,1),secondMatch);
-        Assert.assertEquals(MatrixHelper.transposeMatrizColumn(matrix,2),thirdMatch);
+        Assert.assertEquals(MatrixHelper.transposeMatrixColumn(matrix,0),firstMatch);
+        Assert.assertEquals(MatrixHelper.transposeMatrixColumn(matrix,1),secondMatch);
+        Assert.assertEquals(MatrixHelper.transposeMatrixColumn(matrix,2),thirdMatch);
     }
 
 }

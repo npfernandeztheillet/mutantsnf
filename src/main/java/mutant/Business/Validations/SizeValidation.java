@@ -2,6 +2,9 @@ package mutant.Business.Validations;
 
 import mutant.Exceptions.InvalidException;
 
+/**
+ * Class responsible for validating that a matrix has a valid size (nxn and not empty).
+ */
 public class SizeValidation implements IValidation{
 
     @Override
