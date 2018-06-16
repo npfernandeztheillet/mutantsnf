@@ -19,7 +19,7 @@
   + Mutant -> Body: `{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}`
 
 ## Documentation
-+ [JDoc](/doc/jdoc/index.html)
++ [JDoc](https://npfernandeztheillet.github.io/mutantsnf/jdoc/overview-summary.html)
 + [Sequence diagram](/docs/pdf/sequence.pdf)
 + [Architecture diagram](/docs/pdf/architecture.pdf)
 
