@@ -20,8 +20,8 @@
 
 ## Documentation
 + [JDoc](/doc/jdoc/index.html)
-+ [Sequence diagram](/doc/pdf/sequence.pdf)
-+ [Architecture diagram](/doc/pdf/architectecture.pdf)
++ [Sequence diagram](/docs/pdf/sequence.pdf)
++ [Architecture diagram](/docs/pdf/architecture.pdf)
 
 
 ## Built With
