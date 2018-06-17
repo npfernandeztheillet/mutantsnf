@@ -23,9 +23,9 @@ public class MutantService {
     /**
      *
      *First, it is verified if the DNA sequence sent is valid.
-     *Then it looks if it is in the cache. In the case that is found, it is returned true.
-     *If not, it is searched in the database, if it is, it is added to the cache and returned true.
-     * If not, the sequence is analyzed, and if it is a mutant, it is added to the database and to the cache and true is returned
+     *Then it looks if it is in the cache. In the case that is found, it is return the value of getIsMutant().
+     *If not, it is searched in the database, if it is, it is added to the cache and return the value of getIsMutant().
+     * If not, the sequence is analyzed, it is added to the database and to the cache and return the value of getIsMutant().
      * @param dna sequence
      * @return true, if more than MINSEQUENCE strings of CONSECUTIVECHARS valid consecutive characters are found, false in other case.
      * @throws Exception InvalidException or any exception in the process.
@@ -41,10 +41,8 @@ public class MutantService {
             DNADTO dbDTO = dnaRepository.getByDNA(dnaString);
             if (dbDTO == null){
                 dnaDTO= business.analyseDna(dnaDTO);
-                if (dnaDTO.getIsMutant()){
-                    dnaRepository.save(dnaDTO);
-                    cache.put(dnaString,dnaDTO);
-                }
+                dnaRepository.save(dnaDTO);
+                cache.put(dnaString,dnaDTO);
             }else
                 cache.put(dnaString,dnaDTO=dbDTO);
         }else
