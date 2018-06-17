@@ -1,10 +1,5 @@
 package mutant.Services;
 
-import mutant.Business.DTOs.DNADTO;
-import mutant.Business.MutantBusiness;
-import mutant.Data.Repository.DNARepository;
-import mutant.Utils.Helpers.CommonHelper;
-import mutant.Utils.Static.Constants;
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Element;
@@ -19,7 +14,7 @@ public class CacheService {
     @Autowired
     private CacheManager cacheManager;
 
-    private String cacheName;
+    private final String cacheName;
 
     public CacheService(){
         this.cacheName = DEFAULTNAME;

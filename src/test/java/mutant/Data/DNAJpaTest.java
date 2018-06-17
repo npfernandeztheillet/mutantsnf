@@ -14,9 +14,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static com.jayway.restassured.RestAssured.given;
 import static mutant.Utils.Helpers.CommonHelper.getRandomMatrix;
 
+/**
+ * Class responsible for test the JPA implemented class.
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.DEFINED_PORT)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
@@ -64,7 +66,7 @@ public class DNAJpaTest {
         }catch (Exception e){
             Assert.fail();
         }
-        Assert.assertNotNull(dnaRepository.findByDNA(entitySaved.getDNA()));
+        dnaRepository.findByDNA(entitySaved.getDNA());
     }
 
     @Test

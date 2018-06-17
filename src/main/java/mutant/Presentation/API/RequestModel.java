@@ -1,6 +1,6 @@
 package mutant.Presentation.API;
 
-public class RequestModel {
+class RequestModel {
 
     public String[] dna;
 }

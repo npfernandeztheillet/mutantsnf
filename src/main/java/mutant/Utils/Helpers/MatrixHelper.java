@@ -1,8 +1,8 @@
 package mutant.Utils.Helpers;
 
-
-import java.security.SecureRandom;
-
+/**
+ * Class responsible for helping with operations on matrix.
+ */
 public class MatrixHelper {
     /**
      * Method responsible for obtaining a diagonal above the main diagonal of the matrix

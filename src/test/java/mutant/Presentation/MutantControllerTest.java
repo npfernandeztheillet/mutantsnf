@@ -14,10 +14,13 @@ import java.util.Map;
 
 import static com.jayway.restassured.RestAssured.given;
 
+/**
+ * Class responsible for test the Mutant controller endpoints.
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.DEFINED_PORT)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-public class MutantControllerTest extends FunctionalTest{
+public class MutantControllerTest extends ConfigurationAPITest{
 
     @Autowired
     private DNARepository dnaRepository;

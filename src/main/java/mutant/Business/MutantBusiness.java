@@ -15,12 +15,12 @@ public class MutantBusiness {
     /**
      * Number of characters to consider a match of DNA
      */
-    private int consecutiveChars;
+    private final int consecutiveChars;
 
     /**
      * Minimum amount of matches to consider that the DNA sequence corresponds to a mutant sequence.
      */
-    private int minSequences;
+    private final int minSequences;
 
     public MutantBusiness(int consecutiveChars, int minSequences){
         this.consecutiveChars = consecutiveChars;
@@ -44,9 +44,8 @@ public class MutantBusiness {
      * All Matrix with size lower than 4 are no mutant.After check that, check in horizontal. Then vertically (transposing and check horizontal) and finally diagonally (in the 2 diagonal directions)
      * @param dnaDTO
      * @return DTO updated regarding if it is mutant or not.
-     * @throws InvalidException
      */
-    public DNADTO analyseDna(DNADTO dnaDTO) throws InvalidException {
+    public DNADTO analyseDna(DNADTO dnaDTO) {
         dnaDTO.setIsMutant(checkIsMutant(dnaDTO));
         return dnaDTO;
     }
@@ -83,9 +82,7 @@ public class MutantBusiness {
             found+=CommonHelper.countMatchesString(MatrixHelper.getUpperDiagonal(matrix, i, false),found,minSequences);
         }
 
-        if (found < minSequences)
-            return false;
-        return true;
+        return found >= minSequences;
     }
 
 }

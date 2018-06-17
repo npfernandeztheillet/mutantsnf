@@ -11,14 +11,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Class responsible for test Matrix Helper methods.
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.DEFINED_PORT)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class MatrixHelperTest {
 
-    private int addAllDirections(String []matrix,ArrayList<String> arrayList){
+    private int addAllDirections(String[] matrix){
         int size= matrix.length;
-        arrayList = new ArrayList<>();
+        ArrayList<String> arrayList = new ArrayList<>();
         for (int i = 0; i <= size-4; i++) {
             arrayList.add(MatrixHelper.getBelowDiagonal(matrix, i, true));
             arrayList.add(MatrixHelper.getBelowDiagonal(matrix, i, false));
@@ -33,13 +36,13 @@ public class MatrixHelperTest {
     public void getAllDiagonalsTest() {
         String[] matrix = new String[]{"ABCDE","FGHIJ","KLMNO","PQRST","UVWXY"};
         ArrayList<String> arrayList = new ArrayList<>();
-        Assert.assertEquals(6,addAllDirections(matrix,arrayList));
+        Assert.assertEquals(6,addAllDirections(matrix));
         matrix = new String[]{"ABCD","EFGH","IJKL","MNOP"};
-        addAllDirections(matrix,arrayList);
-        Assert.assertEquals(2,addAllDirections(matrix,arrayList));
+        addAllDirections(matrix);
+        Assert.assertEquals(2,addAllDirections(matrix));
         matrix = new String[]{"ABCDEF","GHIJKL","MNOPQR","STUVWX","YZ1234","567890"};
-        addAllDirections(matrix,arrayList);
-        Assert.assertEquals(10,addAllDirections(matrix,arrayList));
+        addAllDirections(matrix);
+        Assert.assertEquals(10,addAllDirections(matrix));
     }
 
     @Test

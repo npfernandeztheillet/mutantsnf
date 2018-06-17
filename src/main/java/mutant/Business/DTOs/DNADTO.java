@@ -6,15 +6,13 @@ package mutant.Business.DTOs;
 public class DNADTO {
 
     private Integer id;
-    private String dna;
-    private boolean isMutant = false;
-    private String[] sequence;
+    private final String dna;
+    private boolean isMutant;
+    private final String[] sequence;
 
     public DNADTO(String[] sequence,String dna){
-        this.id=id;
         this.sequence = sequence;
         this.dna = dna;
-        this.isMutant=isMutant;
     }
 
     public DNADTO(Integer id, String[] sequence,String dna, boolean isMutant){

@@ -8,6 +8,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
+/**
+ * Class responsible for implement the DNA custom repository.
+ */
 
 @Transactional
 public class DNARepositoryImpl implements DNACustomRepository {

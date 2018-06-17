@@ -5,9 +5,6 @@ import mutant.Business.DTOs.DNADTO;
 import mutant.Data.Repository.DNARepository;
 import mutant.Utils.Helpers.CommonHelper;
 import mutant.Utils.Static.Constants;
-import net.sf.ehcache.Cache;
-import net.sf.ehcache.Element;
-import net.sf.ehcache.CacheManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,25 +28,25 @@ public class MutantService {
      * If not, the sequence is analyzed, and if it is a mutant, it is added to the database and to the cache and true is returned
      * @param dna sequence
      * @return true, if more than MINSEQUENCE strings of CONSECUTIVECHARS valid consecutive characters are found, false in other case.
-     * @throws Exception
+     * @throws Exception InvalidException or any exception in the process.
      */
     public boolean isMutant(String[] dna) throws Exception {
         String dnaString = CommonHelper.concatArrayByDelimiter(dna, Constants.DELIMITER);
-        DNADTO cacheElement=null;
+        DNADTO cacheElement;
         DNADTO dnaDTO = new DNADTO(dna,dnaString);
         MutantBusiness business = new MutantBusiness(Constants.CONSECUTIVECHARS,Constants.MINSEQUENCE);
         business.validateDNA(dnaDTO);
         cacheElement= (DNADTO)cache.get(dnaString);
         if (cacheElement == null){
-            dnaDTO = dnaRepository.getByDNA(dnaString);
-            if (dnaDTO == null){
+            DNADTO dbDTO = dnaRepository.getByDNA(dnaString);
+            if (dbDTO == null){
                 dnaDTO= business.analyseDna(dnaDTO);
                 if (dnaDTO.getIsMutant()){
                     dnaRepository.save(dnaDTO);
                     cache.put(dnaString,dnaDTO);
                 }
             }else
-                cache.put(dnaString,dnaDTO);
+                cache.put(dnaString,dbDTO);
         }else
             dnaDTO=cacheElement;
         return dnaDTO.getIsMutant();

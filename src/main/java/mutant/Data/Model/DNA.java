@@ -5,6 +5,9 @@ import mutant.Utils.Helpers.CommonHelper;
 import javax.persistence.*;
 import mutant.Utils.Static.*;
 
+/**
+ * DNA Entity Model class.
+ */
 @Entity
 public class DNA {
 

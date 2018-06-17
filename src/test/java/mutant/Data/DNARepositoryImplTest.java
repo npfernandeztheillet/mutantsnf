@@ -14,6 +14,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static mutant.Utils.Helpers.CommonHelper.getRandomMatrix;
 
+/**
+ * Class responsible for test the repository implemented class.
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.DEFINED_PORT)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
@@ -34,7 +37,7 @@ public class DNARepositoryImplTest {
         }catch (Exception e){
             Assert.fail();
         }
-        Assert.assertNotNull(dnaRepository.findByDNA(entitySaved.getDNA()));
+        dnaRepository.findByDNA(entitySaved.getDNA());
     }
 
     @Test

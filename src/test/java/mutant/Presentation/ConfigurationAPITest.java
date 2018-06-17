@@ -3,13 +3,16 @@ package mutant.Presentation;
 import com.jayway.restassured.RestAssured;
 import org.junit.BeforeClass;
 
-public class FunctionalTest {
+/**
+ * Class responsible for configure the api tests.
+ */
+public class ConfigurationAPITest {
 
     @BeforeClass
     public static void setup() {
         String port = System.getProperty("server.port");
         if (port == null) {
-            RestAssured.port = Integer.valueOf(8080);
+            RestAssured.port = 8080;
         }
         else{
             RestAssured.port = Integer.valueOf(port);

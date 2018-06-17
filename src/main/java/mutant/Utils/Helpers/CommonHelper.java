@@ -7,6 +7,9 @@ import java.security.SecureRandom;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Class responsible for helping with common operations on character, arrays and matrix.
+ */
 public class CommonHelper {
 
     /**
@@ -53,7 +56,7 @@ public class CommonHelper {
      * @return true if stringToValidate has only valid chars defined in validChars
      */
     public static boolean containValidChars(String stringToValidate,String validChars){
-        String regExpValidation= "^["+ new String(validChars) +"]+$";
+        String regExpValidation= "^["+ validChars +"]+$";
         return stringToValidate.matches(regExpValidation);
     }
 
