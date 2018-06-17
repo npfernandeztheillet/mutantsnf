@@ -29,10 +29,12 @@
 
 * [SpringBoot](https://spring.io/projects/spring-boot)
 * [Junit](https://junit.org/junit5/) Test Suite
+* [Intellij](https://www.jetbrains.com/idea/) IDE
 * [MySql](https://www.mysql.com/) DBMS 
 * [Maven](https://maven.apache.org/) - Dependency management
 * [ECache](https://rometools.github.io/rome/) -  LRU cache
 * [Heroku](https://www.heroku.com/) - Cloud application Platform
+* [Cloud Google](https://cloud.google.com/) - Cloud application Platform (used to the database hosting)
 * [Jacoco](https://www.eclemma.org/jacoco/) - Code coverage library
 * [Travis-CI](https://www.eclemma.org/jacoco/) - Continuos Integration
 * [REST Assured](http://rest-assured.io/) - Test Rest API
