@@ -15,9 +15,14 @@
   + For POST requests (with a body): `Content-Type: application/json`
 
 
-`POST /mutants`
+`POST /mutant`
   + No Mutant -> Body: `{"dna":["ATGCGA","CAGTGC","TTATTT","AGACGG","GCGTCA","TCACTG"]}`
   + Mutant -> Body: `{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}`
+
+`Curl Commands`
+curl -i -H "Content-type:application/json" https://mutantsnf.herokuapp.com/mutant -d '{"dna":["ATGCGA","CAGTGC","TTATTT","AGACGG","GCGTCA","TCACTG"]}'
+curl -i -H "Content-type:application/json" https://mutantsnf.herokuapp.com/mutant -d '{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}'
+
 
 ## Documentation
 + [JDoc](https://npfernandeztheillet.github.io/mutantsnf/jdoc/overview-summary.html)
