@@ -23,11 +23,11 @@ public class MutantController {
     private MutantService mutantService;
 
 
-    @RequestMapping(value="/mutant", method = RequestMethod.POST)
-    public ResponseEntity isMutant(@RequestBody RequestModel secuence){
+    @RequestMapping(value="/mutant", method = RequestMethod.POST, consumes="application/json")
+    public ResponseEntity isMutant(@RequestBody RequestModel sequence){
         try {
-            logger.debug("Analysing DNA: " + CommonHelper.concatArrayByDelimiter(secuence.dna,DELIMITER));
-            if(mutantService.isMutant(secuence.dna)){
+            logger.debug("Analysing DNA: " + CommonHelper.concatArrayByDelimiter(sequence.dna,DELIMITER));
+            if(mutantService.isMutant(sequence.dna)){
                 return new ResponseEntity(HttpStatus.OK);
             } else {
                 return new ResponseEntity(HttpStatus.FORBIDDEN);
