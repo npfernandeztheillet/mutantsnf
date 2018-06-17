@@ -46,7 +46,7 @@ public class MutantService {
                     cache.put(dnaString,dnaDTO);
                 }
             }else
-                cache.put(dnaString,dbDTO);
+                cache.put(dnaString,dnaDTO=dbDTO);
         }else
             dnaDTO=cacheElement;
         return dnaDTO.getIsMutant();
