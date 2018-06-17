@@ -20,8 +20,8 @@
   + Mutant -> Body: `{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}`
 
 `Curl Commands`
-curl -i -H "Content-type:application/json" https://mutantsnf.herokuapp.com/mutant -d '{"dna":["ATGCGA","CAGTGC","TTATTT","AGACGG","GCGTCA","TCACTG"]}'
-curl -i -H "Content-type:application/json" https://mutantsnf.herokuapp.com/mutant -d '{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}'
++ curl -i -H "Content-type:application/json" https://mutantsnf.herokuapp.com/mutant -d '{"dna":["ATGCGA","CAGTGC","TTATTT","AGACGG","GCGTCA","TCACTG"]}'
++ curl -i -H "Content-type:application/json" https://mutantsnf.herokuapp.com/mutant -d '{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}'
 
 
 ## Documentation
