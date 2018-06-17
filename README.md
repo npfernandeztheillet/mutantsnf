@@ -6,22 +6,21 @@
 [![Coverage Status](https://coveralls.io/repos/github/npfernandeztheillet/mutantsnf/badge.svg?branch=master)](https://coveralls.io/github/npfernandeztheillet/mutantsnf?branch=master)
 
 ## API Usage
-
-`App URL`
- + https://mutantsnf.herokuapp.com/mutant
-
-`Usage` 
-  
-  + For POST requests (with a body): `Content-Type: application/json`
-
-
-`POST /mutant`
-  + No Mutant -> Body: `{"dna":["ATGCGA","CAGTGC","TTATTT","AGACGG","GCGTCA","TCACTG"]}`
-  + Mutant -> Body: `{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}`
-
-`Curl Commands`
-+ curl -i -H "Content-type:application/json" https://mutantsnf.herokuapp.com/mutant -d '{"dna":["ATGCGA","CAGTGC","TTATTT","AGACGG","GCGTCA","TCACTG"]}'
-+ curl -i -H "Content-type:application/json" https://mutantsnf.herokuapp.com/mutant -d '{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}'
+ * App URL
+    * https://mutantsnf.herokuapp.com/mutant
+ *  POST requests (with a body): 
+    * Content-Type: application/json
+ * No Mutant 
+    * Body examples: 
+        * `{"dna":["ATGCGA","CAGTGC","TTATTT","AGACGG","GCGTCA","TCACTG"]}`
+        * `{"dna":["GAGG","GCTA","CCGG","AAAA"]}`
+ * Mutant
+    * Body example: 
+        * `{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}`
+        * `{"dna":["GGGG","GCTA","CCGG","AAAA"]}` 
+ * Curl Commands
+    * curl -i -H "Content-type:application/json" https://mutantsnf.herokuapp.com/mutant -d '{"dna":["ATGCGA","CAGTGC","TTATTT","AGACGG","GCGTCA","TCACTG"]}'
+    * curl -i -H "Content-type:application/json" https://mutantsnf.herokuapp.com/mutant -d '{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}'
 
 
 ## Documentation
