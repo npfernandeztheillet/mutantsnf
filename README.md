@@ -15,7 +15,7 @@
         * `{"dna":["ATGCGA","CAGTGC","TTATTT","AGACGG","GCGTCA","TCACTG"]}`
         * `{"dna":["GAGG","GCTA","CCGG","AAAA"]}`
  * Mutant
-    * Body example: 
+    * Body examples: 
         * `{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}`
         * `{"dna":["GGGG","GCTA","CCGG","AAAA"]}` 
  * Curl Commands
